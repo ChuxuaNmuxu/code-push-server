@@ -7,8 +7,8 @@ services:
       - data-tmp:/data/tmp
       - ./config.js:/config.js
     environment:
-      DOWNLOAD_URL: "http://10.0.3.3:3000/download"
-      MYSQL_HOST: "10.0.3.3"
+      DOWNLOAD_URL: "http://119.23.68.231:3000/download"
+      MYSQL_HOST: "119.23.68.231"
       MYSQL_PORT: "3308"
       MYSQL_USERNAME: "codepush"
       MYSQL_PASSWORD: "123456"
@@ -17,7 +17,7 @@ services:
       DATA_DIR: "/data/tmp"
       NODE_ENV: "production"
       CONFIG_FILE: "/config.js"
-      REDIS_HOST: "10.0.3.3"
+      REDIS_HOST: "119.23.68.231"
       REDIS_PORT: "6388"
     deploy:
       resources:

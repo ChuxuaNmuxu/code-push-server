@@ -5,7 +5,7 @@ config.development = {
   // Config for database, only support mysql.
   db: {
     username: process.env.RDS_USERNAME || "root",
-    password: process.env.RDS_PASSWORD || null,
+    password: process.env.RDS_PASSWORD || '123456',
     database: process.env.DATA_BASE || "codepush",
     host: process.env.RDS_HOST || "127.0.0.1",
     port: process.env.RDS_PORT || 3306,
@@ -49,16 +49,16 @@ config.development = {
   // Config for local storage when storageType value is "local".
   local: {
     // Binary files storage dir, Do not use tmpdir and it's public download dir.
-    storageDir: process.env.STORAGE_DIR || "/Users/tablee/workspaces/storage",
+    storageDir: process.env.STORAGE_DIR || 'E:/Documents/temp/storage',
     // Binary files download host address which Code Push Server listen to. the files storage in storageDir.
-    downloadUrl: process.env.LOCAL_DOWNLOAD_URL || "http://127.0.0.1:3000/download",
+    downloadUrl: process.env.LOCAL_DOWNLOAD_URL || "http://10.0.3.3:3000/download",
     // public static download spacename.
     public: '/download'
   },
   jwt: {
     // Recommended: 63 random alpha-numeric characters
     // Generate using: https://www.grc.com/passwords.htm
-    tokenSecret: process.env.TOKEN_SECRET ||'INSERT_RANDOM_TOKEN_KEY'
+    tokenSecret: process.env.TOKEN_SECRET ||'ZuvYWA0y8UgOt0YDnRkVPICnDQbps7sb1foBY2rmtBs3G4GHXYhXU9nusCSWoYQ'
   },
   common: {
     /*
@@ -72,7 +72,8 @@ config.development = {
     // create patch updates's number. default value is 3
     diffNums: 3,
     // data dir for caclulate diff files. it's optimization.
-    dataDir: process.env.DATA_DIR || os.tmpdir(),
+    // dataDir: process.env.DATA_DIR || os.tmpdir(),
+    dataDir: process.env.DATA_DIR || "E:/Documents/temp/data",
     // storageType which is your binary package files store. options value is ("local" | "qiniu" | "s3"| "oss" || "tencentcloud")
     storageType: process.env.STORAGE_TYPE || "local",
     // options value is (true | false), when it's true, it will cache updateCheck results in redis.

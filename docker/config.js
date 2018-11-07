@@ -23,7 +23,7 @@ config.development = {
   jwt: {
     // Recommended: 63 random alpha-numeric characters
     // Generate using: https://www.grc.com/passwords.htm
-    tokenSecret: 'INSERT_RANDOM_TOKEN_KEY'
+    tokenSecret: 'RRHyu7R7KUpdn1Sm3DEdpG1iQOhgQNKuBZppBlRi9bqwt51wpJ5gifbTo5pdY9C'
   },
   common: {
     /*

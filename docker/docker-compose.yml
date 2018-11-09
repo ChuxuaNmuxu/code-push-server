@@ -28,34 +28,24 @@ services:
         condition: on-failure
     ports:
       - "3000:3000"
-    networks:
-      - servernet
     depends_on:
       - db
       - redis
   db:
     image: mysql:5.7.23
-    volumes:
-      - data-mysql:/var/lib/mysql
+    volumes: 
+      - data-mysql:/var/lib/mysql 
       - ./sql/codepush-all.sql:/docker-entrypoint-initdb.d/codepush-all.sql
     ports:
-      - "3308:3306"
+      - "3308:3306" 
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "On"
-    networks:
-      - dbnet
-  redis:
+  redis:     
     image: redis:4.0.11-alpine
     volumes:
       - data-redis:/data
     ports:
       - "6388:6379"
-    networks:
-      - redisnet
-networks:
-  servernet:
-  dbnet:
-  redisnet:
 volumes:
   data-storage:
   data-tmp:

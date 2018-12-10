@@ -1,8 +1,6 @@
 FROM node:8.14.0-slim
 
-ENV NAME = "课业" \
-    VERSION = "1.0.0" \
-    COMMIT = ""
+ENV NAME = "课业" VERSION = "1.0.0" COMMIT = ""
 
 # install yarn and git
 RUN apt-get update && apt-get install -y curl apt-transport-https && \
@@ -17,6 +15,8 @@ WORKDIR /staging
 RUN yarn
 
 RUN echo $NAME
+RUN echo $VERSION
+RUN echo $COMMIT
 
 # 热更新
-CMD node /staging/script/staging.js -n $NAME -m $COMMIT -v $VERSION
+CMD ["node", "/staging/script/staging.js", "-n", "$NAME", "-m", "$COMMIT", "-v", "$VERSION"]

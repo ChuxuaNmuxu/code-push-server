@@ -1,7 +1,6 @@
 FROM node:8.14.0-slim
 
-ENV SERVER = "server" \
-    NAME = "课业" \
+ENV NAME = "课业" \
     VERSION = "1.0.0" \
     COMMIT = ""
 
@@ -17,5 +16,7 @@ WORKDIR /staging
 
 RUN yarn
 
+RUN echo $NAME
+
 # 热更新
-CMD node /staging/script/staging.js -s $SERVER -n $NAME -m $COMMIT -v $VERSION
+CMD node /staging/script/staging.js -n $NAME -m $COMMIT -v $VERSION

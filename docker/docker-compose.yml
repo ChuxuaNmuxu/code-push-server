@@ -48,7 +48,8 @@ services:
       - "6388:6379"
   staging:
     build: ./staging
-    volumes: - /data/data/jenkins_home/workspace/cjhms_app_android_staging:/staging
+    volumes: 
+      - /data/data/jenkins_home/workspace/cjhms_app_android_staging:/staging
     depends_on:
       - server
 volumes:

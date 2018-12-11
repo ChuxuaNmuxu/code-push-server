@@ -46,16 +46,6 @@ services:
       - data-redis:/data
     ports:
       - "6388:6379"
-  staging:
-    build: ./staging
-    volumes: 
-      - /data/data/jenkins_home/workspace/cjhms_app_android_staging:/staging
-    depends_on:
-      - server
-    environment:
-      NAME: "课业"
-      VERSION: "1.0.0"
-      COMMIT: ""
 volumes:
   data-storage:
   data-tmp:
